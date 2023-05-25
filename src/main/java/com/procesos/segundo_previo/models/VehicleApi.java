@@ -7,13 +7,13 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class VehiclesApi {
-    private List<Vehicles> vehicles;
-    public List<Vehicles> getVehicles(){
+public class VehicleApi {
+    private List<Vehicle> vehicles;
+    public List<Vehicle> getVehicles(){
         return vehicles;
     }
 
-    public void setVehicles(List<Vehicles> vehicles) {
+    public void setVehicles(List<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }
 }
