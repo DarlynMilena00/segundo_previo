@@ -28,8 +28,6 @@ public class VehicleServiceImp implements VehicleService {
         return vehicleRepository.findById(id).get();
     }
 
-
-
     @Override
     public Boolean createVehicle(){
         try {
@@ -39,9 +37,9 @@ public class VehicleServiceImp implements VehicleService {
             int con=0;
             int regis=0;
             for(Vehicle vehicle : vehicleApi.getVehicles()){
-                con++;
                 try{
                     vehicleRepository.save(vehicle);
+                con++;
                     regis++;
                 }catch(Exception e){}
             }
