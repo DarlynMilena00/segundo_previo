@@ -13,4 +13,5 @@ public class Constants {
     public static final String USER_LOGIN = "Usuario logeado!";
     public static final String INVALID_TOKEN = "Token invalido" ;
     public static final String UPDATE_ERROR = "Error al actualizar el vehiculo" ;
+    public static final String UNAUTHORIZED_ACCESS = "Acceso desautorizado";
 }

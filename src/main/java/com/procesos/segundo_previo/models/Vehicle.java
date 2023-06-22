@@ -21,6 +21,10 @@ public class Vehicle {
     @Column(name = "price")
     private String price;
 
+    //Relacion con el usurario
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     public String getVehicle() {
         return vehicle;
     }

@@ -14,9 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "/vehicle")
+@RequestMapping(value = "/vehicles")
 public class VehicleController {
-
     @Autowired
     private VehicleService vehicleService;
     @Autowired

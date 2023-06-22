@@ -11,4 +11,5 @@ public interface UserService {
     Boolean updateUser(Long id, User user);
     String login(User user);
     Boolean Auth (String token);
+
 }
