@@ -25,6 +25,10 @@ public class UserServiceImp implements UserService{
 
     @Override
     public Boolean createUser(User user) {
+        Optional<User> existingUser = userRepository.findByEmail(user.getEmail());
+        if(existingUser.isPresent()){
+            throw new RuntimeException("Ya existe un usuario con el mismo correo");
+        }
         try {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepository.save(user);
