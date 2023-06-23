@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface VehiclesService {
 
-    Boolean saveCars();
+    Boolean saveVehicles();
 
-    Boolean updateCars (Long id, Vehicles vehicles);
+    Boolean updateVehicles (Long id, Vehicles vehicles);
 
-    Vehicles getCars(Long id);
+    Vehicles getVehicles(Long id);
 
-    List <Vehicles> allCars();
+    List <Vehicles> allVehicles();
 
 }

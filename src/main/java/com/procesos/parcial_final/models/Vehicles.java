@@ -29,51 +29,51 @@ public class Vehicles {
         this.id = id;
     }
 
-    public String getCar() {
+    public String getVehicle() {
         return car;
     }
 
-    public void setCar(String car) {
+    public void setVehicle(String car) {
         this.car = car;
     }
 
-    public String getCar_model() {
+    public String getVehicle_model() {
         return car_model;
     }
 
-    public void setCar_model(String car_model) {
+    public void setVehicle_model(String car_model) {
         this.car_model = car_model;
     }
 
-    public String getCar_color() {
+    public String getVehicle_color() {
         return car_color;
     }
 
-    public void setCar_color(String car_color) {
+    public void setVehicle_color(String car_color) {
         this.car_color = car_color;
     }
 
-    public Long getCar_model_year() {
+    public Long getVehicle_model_year() {
         return car_model_year;
     }
 
-    public void setCar_model_year(Long car_model_year) {
+    public void setVehicle_model_year(Long car_model_year) {
         this.car_model_year = car_model_year;
     }
 
-    public String getCar_vin() {
+    public String getVehicle_vin() {
         return car_vin;
     }
 
-    public void setCar_vin(String car_vin) {
+    public void setVehicle_vin(String car_vin) {
         this.car_vin = car_vin;
     }
 
-    public String getCar_price() {
+    public String getPrice() {
         return price;
     }
 
-    public void setCar_price(String price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

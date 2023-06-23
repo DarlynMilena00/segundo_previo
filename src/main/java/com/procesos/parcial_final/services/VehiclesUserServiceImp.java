@@ -15,7 +15,7 @@ public class VehiclesUserServiceImp implements VehiclesUsersService {
     VehiclesUserRepository vehiclesUserRepository;
 
     @Override
-    public Boolean saveCarsUsers(VehiclesUser vehiclesUser) {
+    public Boolean saveVehiclesUsers(VehiclesUser vehiclesUser) {
         try{
             vehiclesUserRepository.save(vehiclesUser);
             return true;
@@ -26,7 +26,7 @@ public class VehiclesUserServiceImp implements VehiclesUsersService {
     }
 
     @Override
-    public Boolean updateCarsUsers(Long id, VehiclesUser vehiclesUser) {
+    public Boolean updateVehiclesUsers(Long id, VehiclesUser vehiclesUser) {
         try{
             VehiclesUser vehiclesUserBD = vehiclesUserRepository.findById(id).get();
             vehiclesUserBD.setVehiclesId(vehiclesUser.getVehiclesId());
@@ -40,7 +40,7 @@ public class VehiclesUserServiceImp implements VehiclesUsersService {
     }
 
     @Override
-    public List<VehiclesUser> getCarsUsers(User user){
+    public List<VehiclesUser> getVehiclesUsers(User user){
         try {
             return vehiclesUserRepository.findByUserId(user);
         }catch(Exception e){
@@ -50,7 +50,7 @@ public class VehiclesUserServiceImp implements VehiclesUsersService {
     }
 
     @Override
-    public List<VehiclesUser> allCarsUsers() {
+    public List<VehiclesUser> allVehiclesUsers() {
         return vehiclesUserRepository.findAll();
     }
 }

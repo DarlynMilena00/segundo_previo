@@ -6,13 +6,13 @@ import java.util.List;
 
 @Data
 public class VehiclesApi {
-    private List<Vehicles> cars;
+    private List<Vehicles> vehicles;
 
-    public List<Vehicles> getCars() {
-        return cars;
+    public List<Vehicles> getVehicles() {
+        return vehicles;
     }
 
-    public void setCars(List<Vehicles> cars) {
-        this.cars = cars;
+    public void setVehicles(List<Vehicles> vehicles) {
+        this.vehicles =vehicles;
     }
 }

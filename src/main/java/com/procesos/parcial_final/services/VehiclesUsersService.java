@@ -6,11 +6,11 @@ import com.procesos.parcial_final.models.User;
 import java.util.List;
 
 public interface VehiclesUsersService {
-    Boolean saveCarsUsers(VehiclesUser vehiclesUser);
+    Boolean saveVehiclesUsers(VehiclesUser vehiclesUser);
 
-    Boolean updateCarsUsers (Long id, VehiclesUser vehiclesUser);
+    Boolean updateVehiclesUsers (Long id, VehiclesUser vehiclesUser);
 
-    List<VehiclesUser> getCarsUsers(User user);
+    List<VehiclesUser> getVehiclesUsers(User user);
 
-    List<VehiclesUser> allCarsUsers();
+    List<VehiclesUser> allVehiclesUsers();
 }

@@ -22,14 +22,14 @@ public class VehiclesServiceImp implements VehiclesService {
     @Autowired
     private VehiclesRepository vehiclesRepository;
     @Override
-    public Boolean saveCars() {
+    public Boolean saveVehicles() {
         try{
             String url="https://myfakeapi.com/api/cars/";
             VehiclesApi vehiclesApi = restTemplate.getForObject(url, VehiclesApi.class);
             Map response = new HashMap();
             int contador=0;
             int registrado=0;
-            for (Vehicles vehicles : vehiclesApi.getCars()) {
+            for (Vehicles vehicles : vehiclesApi.getVehicles()) {
                 contador++;
                 try{
                     vehiclesRepository.save(vehicles);
@@ -45,27 +45,27 @@ public class VehiclesServiceImp implements VehiclesService {
             return false;
         }
     }
-    public Vehicles getCars(Long id){
+    public Vehicles getVehicles(Long id){
 
         return vehiclesRepository.findById(id).get();
     }
 
     @Override
-    public List<Vehicles> allCars() {
+    public List<Vehicles> allVehicles() {
         return vehiclesRepository.findAll();
     }
 
     @Override
-    public Boolean updateCars(Long id, Vehicles vehicles) {
+    public Boolean updateVehicles(Long id, Vehicles vehicles) {
         try{
             Vehicles vehiclesBD = vehiclesRepository.findById(id).get();
-            vehiclesBD.setCar(vehicles.getCar());
-            vehiclesBD.setCar_color(vehicles.getCar_color());
-            vehiclesBD.setCar_price(vehicles.getCar_price());
-            vehiclesBD.setCar_vin(vehicles.getCar_vin());
+            vehiclesBD.setVehicle(vehicles.getVehicle());
+            vehiclesBD.setVehicle_color(vehicles.getVehicle_color());
+            vehiclesBD.setPrice(vehicles.getPrice());
+            vehiclesBD.setVehicle_vin(vehicles.getVehicle_vin());
             vehiclesBD.setAvailability(vehicles.getAvailability());
-            vehiclesBD.setCar_model(vehicles.getCar_model());
-            vehiclesBD.setCar_model_year(vehicles.getCar_model_year());
+            vehiclesBD.setVehicle_model(vehicles.getVehicle_model());
+            vehiclesBD.setVehicle_model_year(vehicles.getVehicle_model_year());
             vehiclesRepository.save(vehiclesBD);
             return true;
         }catch (Exception e){

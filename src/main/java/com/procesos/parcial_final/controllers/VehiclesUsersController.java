@@ -20,15 +20,15 @@ public class VehiclesUsersController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/saveCarsUser")
-    public ResponseEntity saveCarsUsers(@RequestHeader(value="Authorization") String token, @RequestBody VehiclesUser vehiclesUser) {
+    @PostMapping("/saveVehiclesUser")
+    public ResponseEntity saveVehiclesUsers(@RequestHeader(value="Authorization") String token, @RequestBody VehiclesUser vehiclesUser) {
         Map response = new HashMap();
         if(!userService.Auth(token.substring(7))){
             response.put("status", "401");
             response.put("message", "Token invalido");
             return new ResponseEntity(response, HttpStatus.UNAUTHORIZED);
         }
-        boolean res= vehiclesUsersService.saveCarsUsers(vehiclesUser);
+        boolean res= vehiclesUsersService.saveVehiclesUsers(vehiclesUser);
 
         if(res==true){
             response.put("status", "201");
@@ -42,15 +42,15 @@ public class VehiclesUsersController {
     }
 
 
-    @PutMapping(value = "/updateCarsUser/{id}")
-    public ResponseEntity updateCarsUser(@RequestHeader(value="Authorization") String token,@PathVariable Long id,@RequestBody VehiclesUser vehiclesUser){
+    @PutMapping(value = "/updateUserVehicle/{id}")
+    public ResponseEntity updateVehicleUser(@RequestHeader(value="Authorization") String token,@PathVariable Long id,@RequestBody VehiclesUser vehiclesUser){
         Map response = new HashMap();
         if(!userService.Auth(token.substring(7))){
             response.put("status", "401");
             response.put("message", "Token invalido");
             return new ResponseEntity(response, HttpStatus.UNAUTHORIZED);
         }
-        Boolean res = vehiclesUsersService.updateCarsUsers(id, vehiclesUser);
+        Boolean res = vehiclesUsersService.updateVehiclesUsers(id, vehiclesUser);
 
         if(res==true){
             response.put("status", "200");
@@ -66,8 +66,8 @@ public class VehiclesUsersController {
 
 
 
-    @PostMapping(value = "/carsUser")
-    public ResponseEntity findCarsUserById(@RequestHeader(value="Authorization") String token,@RequestBody User user){
+    @PostMapping(value = "/vehiclesUser")
+    public ResponseEntity findVehiclesUserById(@RequestHeader(value="Authorization") String token,@RequestBody User user){
         System.out.println(user.getId());
         Map response = new HashMap();
         try{
@@ -77,8 +77,8 @@ public class VehiclesUsersController {
                 return new ResponseEntity(response, HttpStatus.UNAUTHORIZED);
             }
             response.put("status", "201");
-            if(vehiclesUsersService.getCarsUsers(user).isEmpty()==false) {
-                response.put("data", vehiclesUsersService.getCarsUsers(user));
+            if(vehiclesUsersService.getVehiclesUsers(user).isEmpty()==false) {
+                response.put("data", vehiclesUsersService.getVehiclesUsers(user));
             }else {
                 response.put("data", null);
             }
@@ -91,8 +91,8 @@ public class VehiclesUsersController {
     }
 
 
-    @GetMapping(value = "/carsUsersAll" )
-    public ResponseEntity CarsUser(@RequestHeader(value="Authorization") String token){
+    @GetMapping(value = "/vehiclesUsersAll" )
+    public ResponseEntity VehiclesUser(@RequestHeader(value="Authorization") String token){
 
         Map response = new HashMap();
         try{
@@ -101,7 +101,7 @@ public class VehiclesUsersController {
                 response.put("message", "Token invalido");
                 return new ResponseEntity(response, HttpStatus.UNAUTHORIZED);
             }
-            return new ResponseEntity(vehiclesUsersService.allCarsUsers(), HttpStatus.OK) ;
+            return new ResponseEntity(vehiclesUsersService.allVehiclesUsers(), HttpStatus.OK) ;
         }catch(Exception e) {
             response.put("status", "404");
             response.put("message", "No hay carros");
